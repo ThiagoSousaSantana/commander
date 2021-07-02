@@ -23,8 +23,6 @@ public class Addon {
   private Boolean enabled;
   private BigDecimal price;
 
-  @ManyToOne private Category category;
-
   @ManyToOne private Item item;
 
   @CreatedDate private long createdDate;
