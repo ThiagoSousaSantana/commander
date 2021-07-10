@@ -17,5 +17,4 @@ public class ItemResponse {
   private String imageUrl;
   private String rating;
   private Boolean enabled;
-  private UUID category;
 }

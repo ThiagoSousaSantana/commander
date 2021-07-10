@@ -24,7 +24,7 @@ public class ItemController {
 
   @PostMapping
   public ResponseEntity<ItemResponse> insertItem(@RequestBody ItemRequest itemRequest) {
-    var item = itemService.insert(itemMapper.convertToModel(itemRequest));
+    var item = itemService.insert(itemMapper.convertToModel(itemRequest), itemRequest.getCategoryId());
     var response = itemMapper.convertToResponse(item);
 
     var uri =

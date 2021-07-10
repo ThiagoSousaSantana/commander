@@ -15,9 +15,13 @@ public class ItemService {
 
   @Autowired private ItemRepository itemRepository;
 
-  public Item insert(Item item) {
+  @Autowired private CategoryService categoryService;
+
+  public Item insert(Item item, UUID categoryId) {
+    var category = categoryService.findById(categoryId);
     item.generateId();
     item.setEnabled(true);
+    item.setCategory(category);
     return itemRepository.save(item);
   }
 

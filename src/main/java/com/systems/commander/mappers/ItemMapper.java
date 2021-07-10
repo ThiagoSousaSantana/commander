@@ -1,10 +1,7 @@
 package com.systems.commander.mappers;
 
-import com.systems.commander.dto.CategoryRequest;
-import com.systems.commander.dto.CategoryResponse;
 import com.systems.commander.dto.ItemRequest;
 import com.systems.commander.dto.ItemResponse;
-import com.systems.commander.models.Category;
 import com.systems.commander.models.Item;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

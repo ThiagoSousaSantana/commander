@@ -15,5 +15,5 @@ public class ItemRequest {
   private String size;
   private String imageUrl;
   private String rating;
-  private UUID category;
+  private UUID categoryId;
 }
