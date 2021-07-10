@@ -8,6 +8,8 @@ import javax.persistence.EntityListeners;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -30,13 +32,19 @@ public class Item {
 
   @ManyToOne private Category category;
 
+  @JsonIgnore
   @OneToMany(mappedBy = "item")
   private List<Flavor> flavors;
 
+  @JsonIgnore
   @OneToMany(mappedBy = "item")
   private List<Addon> addons;
 
   @CreatedDate private long createdDate;
 
   @LastModifiedDate private long modifiedDate;
+
+  public void generateId() {
+    this.id = UUID.randomUUID();
+  }
 }
